@@ -1,0 +1,310 @@
+/* 入力ページ専用スタイル */
+
+/* 入力ページヘッダー */
+.input-header {
+  background-color: var(--color-neutral-800);
+  color: var(--color-text-on-primary);
+  padding: 0;
+}
+
+.header-bar {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+}
+
+/* 入力ページメイン */
+.input-main {
+  padding: var(--spacing-xl);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* 入力テーブル */
+.input-table-container {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.input-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+}
+
+.input-table th {
+  background-color: var(--color-surface-variant);
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.input-table td {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition: var(--transition-fast);
+}
+
+.table-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.1);
+}
+
+.table-input::placeholder {
+  color: var(--color-text-disabled);
+}
+
+/* スライダー入力エリア */
+.slider-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.slider-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.slider-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.slider-sublabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* 標準スライダー */
+.standard-slider {
+  width: 100%;
+  height: 6px;
+  background: var(--color-neutral-300);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.standard-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.standard-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.standard-slider::-webkit-slider-track {
+  background: var(--color-neutral-300);
+  border-radius: 3px;
+  height: 6px;
+}
+
+.standard-slider::-moz-range-track {
+  background: var(--color-neutral-300);
+  border-radius: 3px;
+  height: 6px;
+}
+
+/* カラースライダー */
+.color-slider {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, 
+    #ff0000 0%, 
+    #ff8000 12.5%, 
+    #ffff00 25%, 
+    #80ff00 37.5%, 
+    #00ff00 50%, 
+    #00ff80 62.5%, 
+    #00ffff 75%, 
+    #0080ff 87.5%, 
+    #0000ff 100%);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.color-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.color-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 決定ボタンエリア */
+.decision-button-area {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.decision-button {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-1);
+}
+
+.decision-button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.decision-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-1);
+}
+
+.decision-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.2);
+}
+
+/* 空のスロット */
+.empty-slot {
+  /* 空のスロットは何も表示しない */
+}
+
+/* ホームページボタン */
+.home-page-button {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: var(--z-fixed);
+}
+
+.home-link {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-fast);
+}
+
+.home-link:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .slider-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .input-main {
+    padding: var(--spacing-lg);
+  }
+  
+  .input-table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .input-table th,
+  .input-table td {
+    padding: var(--spacing-sm);
+  }
+  
+  .decision-button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .input-table-container {
+    overflow-x: auto;
+  }
+  
+  .input-table {
+    min-width: 600px;
+  }
+} 

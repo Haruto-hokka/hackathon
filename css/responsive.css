@@ -1,0 +1,549 @@
+/* レスポンシブデザイン - Mobile First アプローチ */
+
+/* ベース（モバイル）スタイル */
+@media (max-width: 767px) {
+  /* ヘッダー */
+  .app-header {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .app-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* タブナビゲーション */
+  .tab-navigation {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .tab-btn {
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .tab-text {
+    display: none;
+  }
+  
+  .tab-icon {
+    font-size: var(--font-size-xl);
+  }
+  
+  /* メインコンテンツ */
+  .app-main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  /* 統計サマリー */
+  .stats-summary {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-2xl);
+  }
+  
+  /* データテーブル */
+  .table-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .table-controls {
+    justify-content: center;
+  }
+  
+  .data-table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  /* チャートエリア */
+  .charts-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .chart-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .chart-wrapper {
+    height: 250px;
+  }
+  
+  /* フォーム */
+  .form-section {
+    padding: var(--spacing-lg);
+  }
+  
+  .input-container h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .input-description {
+    font-size: var(--font-size-base);
+  }
+  
+  /* スライダー */
+  .color-slider-group {
+    padding: var(--spacing-md);
+  }
+  
+  .hsl-slider-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+  
+  .hsl-slider-item label {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .slider-labels {
+    font-size: var(--font-size-xs);
+  }
+  
+  .emotion-labels {
+    font-size: var(--font-size-xs);
+  }
+  
+  .emotion-slider-group {
+    padding: var(--spacing-md);
+  }
+  
+  /* ボタン */
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  /* モーダル */
+  .modal-content {
+    width: 95%;
+    margin: var(--spacing-lg);
+  }
+  
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: var(--spacing-lg);
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+  
+  /* 通知 */
+  .notification {
+    right: var(--spacing-sm);
+    left: var(--spacing-sm);
+    max-width: none;
+    top: var(--spacing-sm);
+  }
+  
+  /* フッター */
+  .app-footer {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+/* タブレット */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* ヘッダー */
+  .app-header {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  /* タブナビゲーション */
+  .tab-navigation {
+    gap: var(--spacing-md);
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  /* メインコンテンツ */
+  .app-main {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  /* 統計サマリー */
+  .stats-summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* チャートエリア */
+  .charts-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .chart-section:last-child {
+    grid-column: 1 / -1;
+  }
+  
+  /* フォーム */
+  .input-container {
+    max-width: 700px;
+  }
+  
+  /* スライダー */
+  .hsl-slider-item {
+    gap: var(--spacing-md);
+  }
+  
+  .hsl-slider-item label {
+    min-width: 50px;
+  }
+}
+
+/* デスクトップ */
+@media (min-width: 1024px) {
+  /* ヘッダー */
+  .app-header {
+    padding: var(--spacing-xl) var(--spacing-2xl);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  /* タブナビゲーション */
+  .tab-navigation {
+    gap: var(--spacing-lg);
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  /* メインコンテンツ */
+  .app-main {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+  
+  /* 統計サマリー */
+  .stats-summary {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  /* チャートエリア */
+  .charts-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  /* フォーム */
+  .input-container {
+    max-width: 800px;
+  }
+  
+  /* スライダー */
+  .hsl-slider-item {
+    gap: var(--spacing-lg);
+  }
+  
+  .hsl-slider-item label {
+    min-width: 60px;
+  }
+  
+  /* ホバー効果 */
+  .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-4);
+  }
+  
+  .tab-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-4);
+  }
+}
+
+/* 大画面デスクトップ */
+@media (min-width: 1440px) {
+  .app-main {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+  
+  .stats-summary {
+    gap: var(--spacing-2xl);
+  }
+  
+  .charts-container {
+    gap: var(--spacing-2xl);
+  }
+  
+  .chart-wrapper {
+    height: 350px;
+  }
+}
+
+/* 横画面（ランドスケープ）対応 */
+@media (orientation: landscape) and (max-height: 600px) {
+  .app-header {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .app-subtitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .app-main {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .stats-summary {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* 高解像度ディスプレイ対応 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .btn {
+    border-width: 0.5px;
+  }
+  
+  .input-group input,
+  .input-group select {
+    border-width: 0.5px;
+  }
+  
+  .slider {
+    height: 4px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 印刷スタイル */
+@media print {
+  .app-header {
+    background: none !important;
+    color: var(--color-text-primary) !important;
+    box-shadow: none !important;
+    position: static !important;
+  }
+  
+  .tab-navigation {
+    display: none !important;
+  }
+  
+  .app-footer {
+    display: none !important;
+  }
+  
+  .btn {
+    display: none !important;
+  }
+  
+  .modal {
+    display: none !important;
+  }
+  
+  .notification {
+    display: none !important;
+  }
+  
+  .stat-card {
+    box-shadow: none !important;
+    border: 1px solid var(--color-neutral-300) !important;
+  }
+  
+  .data-table-container {
+    box-shadow: none !important;
+    border: 1px solid var(--color-neutral-300) !important;
+  }
+  
+  .chart-section {
+    box-shadow: none !important;
+    border: 1px solid var(--color-neutral-300) !important;
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .btn::before {
+    display: none !important;
+  }
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0000ff;
+    --color-primary-dark: #000080;
+    --color-danger: #ff0000;
+    --color-success: #008000;
+    --color-warning: #ff8000;
+    --border-color: #000000;
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .input-group input,
+  .input-group select {
+    border: 2px solid currentColor;
+  }
+  
+  .slider {
+    border: 2px solid currentColor;
+  }
+}
+
+/* フォーカス表示の強化 */
+@media (prefers-reduced-motion: no-preference) {
+  .btn:focus,
+  .input-group input:focus,
+  .input-group select:focus,
+  .slider:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* ダークモードでの追加調整 */
+@media (prefers-color-scheme: dark) {
+  .btn-secondary {
+    background: var(--color-neutral-800);
+    color: var(--color-text-primary);
+    border-color: var(--color-neutral-600);
+  }
+  
+  .btn-secondary:hover {
+    background: var(--color-neutral-700);
+  }
+  
+  .modal-content {
+    background: var(--color-surface);
+    border-color: var(--border-color);
+  }
+  
+  .notification {
+    background: var(--color-surface);
+    border-color: var(--border-color);
+  }
+}
+
+/* タッチデバイス対応 */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+  
+  .tab-btn:hover {
+    transform: none;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* 超小画面対応 */
+@media (max-width: 320px) {
+  .app-header {
+    padding: var(--spacing-sm);
+  }
+  
+  .app-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .app-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .app-main {
+    padding: var(--spacing-sm);
+  }
+  
+  .form-section {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  .slider-labels,
+  .emotion-labels {
+    font-size: var(--font-size-xs);
+  }
+} 

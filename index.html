@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服管理アプリ</title>
+  <meta name="description" content="服の定量的情報と感情的評価を記録し、ユーザーの嗜好性を可視化する管理アプリ">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="header-content">
+        <h1 class="app-title">ホームページ</h1>
+        <nav class="main-navigation">
+          <a href="#" class="nav-link" data-tab="list">一覧</a>
+          <a href="#" class="nav-link" data-tab="results">結果データ</a>
+          <a href="#" class="nav-link" data-tab="recommend">おすすめ</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="app-main">
+      <!-- 一覧タブ -->
+      <section id="list-tab" class="tab-content active">
+        <div class="section-container">
+          <div class="section-header" data-toggle="list-section">
+            <h2 class="section-title">一覧</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content" id="list-section">
+            <div class="data-table-container">
+              <table class="data-table" id="clothingTable">
+                <thead>
+                  <tr>
+                    <th>商品名</th>
+                    <th>配色</th>
+                    <th>シルエット</th>
+                    <th>素材感</th>
+                    <th>ブランド/値段</th>
+                    <th>フィット感</th>
+                    <th>カテゴリ</th>
+                    <th>使用シーン</th>
+                    <th>個人的な価値観・こだわり</th>
+                    <th>購入日/URL</th>
+                  </tr>
+                </thead>
+                <tbody id="clothingTableBody">
+                  <!-- 動的生成 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 結果データタブ -->
+      <section id="results-tab" class="tab-content">
+        <div class="section-container">
+          <div class="section-header" data-toggle="results-section">
+            <h2 class="section-title">結果データ</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content" id="results-section">
+            <div class="subsection">
+              <div class="subsection-header" data-toggle="conditions-section">
+                <h3 class="subsection-title">条件</h3>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content" id="conditions-section">
+                <h4 class="chart-title">嗜好性分布図</h4>
+                <div class="charts-grid">
+                  <div class="chart-item">
+                    <canvas id="emotionColorChart"></canvas>
+                    <p class="chart-label">感情 vs 配色</p>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="emotionPriceChart"></canvas>
+                    <p class="chart-label">感情 vs 値段</p>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="fitSilhouetteChart"></canvas>
+                    <p class="chart-label">フィット感 vs シルエット</p>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="valuesPriceChart"></canvas>
+                    <p class="chart-label">個人的な価値観・こだわり vs 値段</p>
+                  </div>
+                  <div class="chart-item">
+                    <canvas id="fitPriceChart"></canvas>
+                    <p class="chart-label">フィット感 vs 値段</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- おすすめタブ -->
+      <section id="recommend-tab" class="tab-content">
+        <div class="section-container">
+          <div class="section-header" data-toggle="recommend-section">
+            <h2 class="section-title">おすすめ</h2>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content" id="recommend-section">
+            <div class="subsection">
+              <div class="subsection-header" data-toggle="recommend-conditions-section">
+                <h3 class="subsection-title">条件</h3>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content" id="recommend-conditions-section">
+                <div class="recommend-cards">
+                  <div class="recommend-card">
+                    <div class="product-image">
+                      <div class="placeholder-image">Tシャツ</div>
+                    </div>
+                    <div class="product-info">
+                      <p class="product-brand">ブランド: xxxxx</p>
+                      <p class="product-price">金額: xxxxx</p>
+                      <p class="product-url">URL: xxxxx</p>
+                    </div>
+                  </div>
+                  <div class="recommend-card">
+                    <div class="product-image">
+                      <div class="placeholder-image">Tシャツ</div>
+                    </div>
+                    <div class="product-info">
+                      <p class="product-brand">ブランド: xxxxx</p>
+                      <p class="product-price">金額: xxxxx</p>
+                      <p class="product-url">URL: xxxxx</p>
+                    </div>
+                  </div>
+                  <div class="recommend-card">
+                    <div class="product-image">
+                      <div class="placeholder-image">Tシャツ</div>
+                    </div>
+                    <div class="product-info">
+                      <p class="product-brand">ブランド: xxxxx</p>
+                      <p class="product-price">金額: xxxxx</p>
+                      <p class="product-url">URL: xxxxx</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 入力ページボタン -->
+    <div class="input-page-button">
+      <a href="input.html" class="input-link">入力ページ</a>
+    </div>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="modalTitle">確認</h3>
+          <button class="modal-close" id="modalClose" aria-label="モーダルを閉じる">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="modalMessage">本当に実行しますか？</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="modalCancel">キャンセル</button>
+          <button class="btn btn-primary" id="modalConfirm">確認</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通知 -->
+    <div id="notification" class="notification" style="display: none;">
+      <span id="notificationMessage"></span>
+      <button class="notification-close" id="notificationClose">&times;</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/chart-manager.js"></script>
+    <script src="js/form-manager.js"></script>
+  </div>
+</body>
+</html> 

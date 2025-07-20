@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>入力ページ - 服管理アプリ</title>
+  <meta name="description" content="服の定量的情報と感情的評価を記録し、ユーザーの嗜好性を可視化する管理アプリ">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/input.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- ヘッダー -->
+    <header class="input-header">
+      <div class="header-bar">
+        <h1 class="page-title">入力ページ</h1>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="input-main">
+      <h2 class="main-title">入力ページ</h2>
+      
+      <!-- データ入力テーブル -->
+      <div class="input-table-container">
+        <table class="input-table">
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>配色</th>
+              <th>シルエット</th>
+              <th>素材感</th>
+              <th>ブランド/値段</th>
+              <th>フィット感</th>
+              <th>カテゴリ</th>
+              <th>使用シーン</th>
+              <th>個人的な価値観・こだわり</th>
+              <th>購入日/URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" class="table-input" placeholder="商品名"></td>
+              <td><input type="text" class="table-input" placeholder="配色"></td>
+              <td><input type="text" class="table-input" placeholder="シルエット"></td>
+              <td><input type="text" class="table-input" placeholder="素材感"></td>
+              <td><input type="text" class="table-input" placeholder="ブランド/値段"></td>
+              <td><input type="text" class="table-input" placeholder="フィット感"></td>
+              <td><input type="text" class="table-input" placeholder="カテゴリ"></td>
+              <td><input type="text" class="table-input" placeholder="使用シーン"></td>
+              <td><input type="text" class="table-input" placeholder="価値観・こだわり"></td>
+              <td><input type="text" class="table-input" placeholder="購入日/URL"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- スライダー入力エリア -->
+      <div class="slider-input-area">
+        <!-- 上段のスライダー -->
+        <div class="slider-row">
+          <!-- 配色スライダー -->
+          <div class="slider-group">
+            <label class="slider-label">配色</label>
+            <div class="slider-sublabel">定量</div>
+            <input type="range" id="colorSlider" min="0" max="360" value="0" class="color-slider">
+          </div>
+
+          <!-- 値段スライダー -->
+          <div class="slider-group">
+            <label class="slider-label">値段</label>
+            <input type="range" id="priceSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+
+          <!-- シルエットスライダー -->
+          <div class="slider-group">
+            <label class="slider-label">シルエット</label>
+            <input type="range" id="silhouetteSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+
+          <!-- 素材感スライダー -->
+          <div class="slider-group">
+            <label class="slider-label">素材感</label>
+            <input type="range" id="materialSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+        </div>
+
+        <!-- 下段のスライダー -->
+        <div class="slider-row">
+          <!-- 感情スライダー -->
+          <div class="slider-group">
+            <label class="slider-label">感情</label>
+            <input type="range" id="emotionSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+
+          <!-- フィット感スライダー -->
+          <div class="slider-group">
+            <label class="slider-label">フィット感</label>
+            <input type="range" id="fitSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+
+          <!-- 個人的な価値観・こだわりスライダー -->
+          <div class="slider-group">
+            <label class="slider-label">個人的な価値観</label>
+            <div class="slider-sublabel">・こだわり</div>
+            <input type="range" id="valuesSlider" min="0" max="100" value="50" class="standard-slider">
+          </div>
+
+          <!-- 空のスロット -->
+          <div class="slider-group empty-slot"></div>
+        </div>
+      </div>
+
+      <!-- 決定ボタンエリア -->
+      <div class="decision-button-area">
+        <button type="button" id="decisionButton" class="decision-button">
+          決定
+        </button>
+      </div>
+    </main>
+
+    <!-- ホームページボタン -->
+    <div class="home-page-button">
+      <a href="index.html" class="home-link">ホームページ</a>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/input.js"></script>
+  </div>
+</body>
+</html> 
